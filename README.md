@@ -1,6 +1,6 @@
-# Escape_from_Labyrinth
+# yukicoder_9273
 
-yy/mm/ddに出題されるスコア問題 "Escape from Labyrinth" の配布物です。
+スコア問題 "Escape from Labyrinth" の配布物です。
 
 テストケース生成プログラム、ジャッジプログラムはC++で書かれています。
 
