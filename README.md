@@ -15,4 +15,6 @@ seeds.txt ... 仮のシード値を記載したテキストです。一行目に
 
 vis.cpp ... ビジュアライザーのSiv3D上のコードです。コンパイルにはSiv3Dの導入が必要です。
 
-visualizer.zip ... ローカル環境で動作するビジュアライザーです。使用方法は同梱のreadme.txtをお読みください。
+Visualizer_for_Mac.zip ... Mac版のビジュアライザーです。使用方法は同梱のreadme.txtをお読みください。
+
+Visualizer_for_Windows.zip ... Windows版のビジュアライザーです。使用方法は同梱のreadme.txtをお読みください。
