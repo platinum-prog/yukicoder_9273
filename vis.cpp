@@ -182,8 +182,20 @@ int Update(Grid<Cell>& grid, String action, Player& player){
                 Print << U"Invalid move : out of grid";
                 return -1;
             }
+            if(grid[ny][nx].status == cell_status::wall){
+                Print << U"Invalid move : cannot pass through a wall";
+                return -1;
+            }
+            else if(grid[ny][nx].status == cell_status::block){
+                Print << U"Invalid move : cannot pass through a block";
+                return -1;
+            }
+            else if(grid[ny][nx].status == cell_status::enemy){
+                Print << U"Invalid move : cannot pass through a detector";
+                return -1;
+            }
             // プレイヤーの状態を更新
-            if(grid[ny][nx].status == cell_status::fire){
+            else if(grid[ny][nx].status == cell_status::fire){
                 player.get_fire();
             }
             else if(grid[ny][nx].status == cell_status::jewel){
@@ -639,11 +651,14 @@ void Main(){
             DrawMagic(fields[turn], player[turn]);
         }
         font(U"HP = ", player[turn].hp).draw(620, 40);
-        if(player[turn].hp <= 0){
-            font(U"Failed to escape").draw(620, 260);
+        if(player[turn].escaped){
+            font(U"Escaped").draw(620, 260);
+        }
+        else if(player[turn].hp <= 0){
+            font(U"Failed").draw(620, 260);
         }
         if(invalid_turn != 0 and invalid_turn != inf){
-            font(U"Invalid action in turn ", invalid_turn, U" : ",
+            font(U"Invalid action in turn ", invalid_turn + 1, U" : ",
                  Actions[invalid_turn]).draw(10, 660);
         }
     }
